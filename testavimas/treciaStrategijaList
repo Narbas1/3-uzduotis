@@ -1,0 +1,197 @@
+pirmas testas 
+
+test1.txt
+
+test1.txt: failo nuskaitymas uztruko  0.0183s
+test1.txt: studentu skirstymas i 2 kategorijas uztruko 0.0003s
+
+Normaliu studentu rusiavimo laikas: 0.0001s
+Nepazangiu studentu rusiavimo laikas: 0.0000s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0017s
+Normaliu studentu spausdinimas i faila uztruko: 0.0107s
+
+Visas testavimo laikas: 0.0310s
+
+-----------------------------------------------------------
+test2.txt
+
+test2.txt: failo nuskaitymas uztruko  0.1101s
+test2.txt: studentu skirstymas i 2 kategorijas uztruko 0.0017s
+
+Normaliu studentu rusiavimo laikas: 0.0004s
+Nepazangiu studentu rusiavimo laikas: 0.0003s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0129s
+Normaliu studentu spausdinimas i faila uztruko: 0.0176s
+
+Visas testavimo laikas: 0.1431s
+
+-----------------------------------------------------------
+test3.txt
+
+test3.txt: failo nuskaitymas uztruko  1.1213s
+test3.txt: studentu skirstymas i 2 kategorijas uztruko 0.0188s
+
+Normaliu studentu rusiavimo laikas: 0.0103s
+Nepazangiu studentu rusiavimo laikas: 0.0067s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.1066s
+Normaliu studentu spausdinimas i faila uztruko: 0.1752s
+
+Visas testavimo laikas: 1.4388s
+
+-----------------------------------------------------------
+test4.txt
+
+test4.txt: failo nuskaitymas uztruko  10.9416s
+test4.txt: studentu skirstymas i 2 kategorijas uztruko 0.2686s
+
+Normaliu studentu rusiavimo laikas: 0.2282s
+Nepazangiu studentu rusiavimo laikas: 0.1234s
+Nepazangiu studentu spausdinimas i faila uztruko: 1.0062s
+Normaliu studentu spausdinimas i faila uztruko: 1.3098s
+
+Visas testavimo laikas: 13.8777s
+
+-----------------------------------------------------------
+test5.txt
+
+test5.txt: failo nuskaitymas uztruko  110.1392s
+test5.txt: studentu skirstymas i 2 kategorijas uztruko 3.4681s
+
+Normaliu studentu rusiavimo laikas: 3.6871s
+Nepazangiu studentu rusiavimo laikas: 2.7305s
+Nepazangiu studentu spausdinimas i faila uztruko: 12.4934s
+Normaliu studentu spausdinimas i faila uztruko: 17.5093s
+
+Visas testavimo laikas: 150.0276s
+
+antras testas
+
+test1.txt
+
+test1.txt: failo nuskaitymas uztruko  0.0305s
+test1.txt: studentu skirstymas i 2 kategorijas uztruko 0.0007s
+
+Normaliu studentu rusiavimo laikas: 0.0001s
+Nepazangiu studentu rusiavimo laikas: 0.0001s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0046s
+Normaliu studentu spausdinimas i faila uztruko: 0.0055s
+
+Visas testavimo laikas: 0.0415s
+
+-----------------------------------------------------------
+test2.txt
+
+test2.txt: failo nuskaitymas uztruko  0.1622s
+test2.txt: studentu skirstymas i 2 kategorijas uztruko 0.0021s
+
+Normaliu studentu rusiavimo laikas: 0.0004s
+Nepazangiu studentu rusiavimo laikas: 0.0003s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0132s
+Normaliu studentu spausdinimas i faila uztruko: 0.0158s
+
+Visas testavimo laikas: 0.1940s
+
+-----------------------------------------------------------
+test3.txt
+
+test3.txt: failo nuskaitymas uztruko  1.1798s
+test3.txt: studentu skirstymas i 2 kategorijas uztruko 0.0280s
+
+Normaliu studentu rusiavimo laikas: 0.0108s
+Nepazangiu studentu rusiavimo laikas: 0.0087s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0994s
+Normaliu studentu spausdinimas i faila uztruko: 0.1766s
+
+Visas testavimo laikas: 1.5033s
+
+-----------------------------------------------------------
+test4.txt
+
+test4.txt: failo nuskaitymas uztruko  11.4942s
+test4.txt: studentu skirstymas i 2 kategorijas uztruko 0.3703s
+
+Normaliu studentu rusiavimo laikas: 0.2180s
+Nepazangiu studentu rusiavimo laikas: 0.1216s
+Nepazangiu studentu spausdinimas i faila uztruko: 1.0743s
+Normaliu studentu spausdinimas i faila uztruko: 1.6215s
+
+Visas testavimo laikas: 14.8999s
+
+-----------------------------------------------------------
+test5.txt
+
+test5.txt: failo nuskaitymas uztruko  110.2550s
+test5.txt: studentu skirstymas i 2 kategorijas uztruko 3.5368s
+
+Normaliu studentu rusiavimo laikas: 3.6061s
+Nepazangiu studentu rusiavimo laikas: 2.7503s
+Nepazangiu studentu spausdinimas i faila uztruko: 12.5866s
+Normaliu studentu spausdinimas i faila uztruko: 17.6732s
+
+Visas testavimo laikas: 150.4079s
+
+trecias testas
+
+test1.txt
+
+test1.txt: failo nuskaitymas uztruko  0.0295s
+test1.txt: studentu skirstymas i 2 kategorijas uztruko 0.0004s
+
+Normaliu studentu rusiavimo laikas: 0.0001s
+Nepazangiu studentu rusiavimo laikas: 0.0000s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0032s
+Normaliu studentu spausdinimas i faila uztruko: 0.0029s
+
+Visas testavimo laikas: 0.0360s
+
+-----------------------------------------------------------
+test2.txt
+
+test2.txt: failo nuskaitymas uztruko  0.1322s
+test2.txt: studentu skirstymas i 2 kategorijas uztruko 0.0021s
+
+Normaliu studentu rusiavimo laikas: 0.0004s
+Nepazangiu studentu rusiavimo laikas: 0.0004s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0107s
+Normaliu studentu spausdinimas i faila uztruko: 0.0147s
+
+Visas testavimo laikas: 0.1605s
+
+-----------------------------------------------------------
+test3.txt
+
+test3.txt: failo nuskaitymas uztruko  1.1153s
+test3.txt: studentu skirstymas i 2 kategorijas uztruko 0.0294s
+
+Normaliu studentu rusiavimo laikas: 0.0169s
+Nepazangiu studentu rusiavimo laikas: 0.0075s
+Nepazangiu studentu spausdinimas i faila uztruko: 0.0964s
+Normaliu studentu spausdinimas i faila uztruko: 0.1408s
+
+Visas testavimo laikas: 1.4063s
+
+-----------------------------------------------------------
+test4.txt
+
+test4.txt: failo nuskaitymas uztruko  11.0168s
+test4.txt: studentu skirstymas i 2 kategorijas uztruko 0.3732s
+
+Normaliu studentu rusiavimo laikas: 0.2175s
+Nepazangiu studentu rusiavimo laikas: 0.1203s
+Nepazangiu studentu spausdinimas i faila uztruko: 1.0900s
+Normaliu studentu spausdinimas i faila uztruko: 1.4032s
+
+Visas testavimo laikas: 14.2211s
+
+-----------------------------------------------------------
+test5.txt
+
+test5.txt: failo nuskaitymas uztruko  112.9607s
+test5.txt: studentu skirstymas i 2 kategorijas uztruko 3.8951s
+
+Normaliu studentu rusiavimo laikas: 3.7833s
+Nepazangiu studentu rusiavimo laikas: 2.8954s
+Nepazangiu studentu spausdinimas i faila uztruko: 12.8642s
+Normaliu studentu spausdinimas i faila uztruko: 16.4745s
+
+Visas testavimo laikas: 152.8733s

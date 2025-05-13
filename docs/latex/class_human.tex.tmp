@@ -1,0 +1,41 @@
+\doxysection{Human Class Reference}
+\hypertarget{class_human}{}\label{class_human}\index{Human@{Human}}
+
+
+Inheritance diagram for Human\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_human_ab6c28285f252b61d40bbddbb6456f80c}\label{class_human_ab6c28285f252b61d40bbddbb6456f80c} 
+{\bfseries Human} (const std\+::string \&v, const std\+::string \&p)
+\item 
+\Hypertarget{class_human_aad84c2e422315b40d446df533502eb2a}\label{class_human_aad84c2e422315b40d446df533502eb2a} 
+const std\+::string \& {\bfseries get\+Vardas} () const
+\item 
+\Hypertarget{class_human_af7159ed53f8fec14a048797b26174cb1}\label{class_human_af7159ed53f8fec14a048797b26174cb1} 
+const std\+::string \& {\bfseries get\+Pavarde} () const
+\item 
+\Hypertarget{class_human_a0e098591e6790230898036f1d75a6718}\label{class_human_a0e098591e6790230898036f1d75a6718} 
+void {\bfseries set\+Vardas} (const std\+::string \&v)
+\item 
+\Hypertarget{class_human_aa99e9dcd94a4b226e1b23cd5c3404962}\label{class_human_aa99e9dcd94a4b226e1b23cd5c3404962} 
+void {\bfseries set\+Pavarde} (const std\+::string \&p)
+\item 
+\Hypertarget{class_human_aab36db7abb53a3187a9d37fce8da38f1}\label{class_human_aab36db7abb53a3187a9d37fce8da38f1} 
+virtual void {\bfseries skaiciuoti\+Galutini} (char galutinio\+Budas)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_human_a619802ee53da352d5375d4a89e5941dc}\label{class_human_a619802ee53da352d5375d4a89e5941dc} 
+std\+::string {\bfseries vardas}
+\item 
+\Hypertarget{class_human_a969df9bc1dcbfbe0eb22b73dcd04ce1d}\label{class_human_a969df9bc1dcbfbe0eb22b73dcd04ce1d} 
+std\+::string {\bfseries pavarde}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Lenovo/\+Desktop/2-\/uzduotis/vector/include/\mbox{\hyperlink{student_8h}{student.\+h}}\end{DoxyCompactItemize}

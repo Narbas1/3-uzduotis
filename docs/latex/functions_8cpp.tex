@@ -1,0 +1,90 @@
+\doxysection{C\+:/\+Users/\+Lenovo/\+Desktop/2-\/uzduotis/vector/source/functions.cpp File Reference}
+\hypertarget{functions_8cpp}{}\label{functions_8cpp}\index{C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/source/functions.cpp@{C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/source/functions.cpp}}
+
+
+this file contains all functions  
+
+
+{\ttfamily \#include "{}functions.\+h"{}}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include "{}student.\+h"{}}\newline
+Include dependency graph for functions.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{functions_8cpp_aab60e5bcd2804b14a03ca446777e2d61}\label{functions_8cpp_aab60e5bcd2804b14a03ca446777e2d61} 
+void {\bfseries rusiuoti\+Output} (std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, char rusiavimo\+Budas, char galutinio\+Budas)
+\item 
+\Hypertarget{functions_8cpp_ada67f14a0bfb92a0b68d5109b51d339c}\label{functions_8cpp_ada67f14a0bfb92a0b68d5109b51d339c} 
+void {\bfseries spausdinimas\+Terminale} (const std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, char galutinio\+Budas)
+\item 
+\Hypertarget{functions_8cpp_aa1d26ddd050ccb9c1398fd5e222b395c}\label{functions_8cpp_aa1d26ddd050ccb9c1398fd5e222b395c} 
+void {\bfseries spausdinimas\+Faile} (const std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, char galutinio\+Budas)
+\item 
+\Hypertarget{functions_8cpp_aaa6f6f8f6fe2ae68868b91b033499664}\label{functions_8cpp_aaa6f6f8f6fe2ae68868b91b033499664} 
+void {\bfseries generuoti\+Faila} (int p\+Kiekis, int studentu\+Kiekis, const std\+::string \&failo\+Pavadinimas)
+\item 
+\Hypertarget{functions_8cpp_ac032af75ef0c61a2269c3093c65e572f}\label{functions_8cpp_ac032af75ef0c61a2269c3093c65e572f} 
+void {\bfseries spausdinimas} (char spaus\+Budas, char rusiavimo\+Budas, char galutinio\+Budas, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe)
+\item 
+\Hypertarget{functions_8cpp_a1d6e64010233969755da09e3372edeae}\label{functions_8cpp_a1d6e64010233969755da09e3372edeae} 
+void {\bfseries sorted\+Student\+Spausdinimas} (std\+::string low\+Grade\+Failas, std\+::string high\+Grade\+Failas, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&nepazangus, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&normalus, char galutinio\+Budas)
+\item 
+\Hypertarget{functions_8cpp_a6ad2581a1483aae99918782de5ce9ef8}\label{functions_8cpp_a6ad2581a1483aae99918782de5ce9ef8} 
+void {\bfseries nuskaityti\+Generuotus\+Failus} (const std\+::string \&failo\+Pavadinimas, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, int p\+Kiekis, char galutinio\+Budas)
+\item 
+\Hypertarget{functions_8cpp_a17a7995aed4e032363e3f75066479327}\label{functions_8cpp_a17a7995aed4e032363e3f75066479327} 
+void {\bfseries skirstyti\+Studentus} (std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&nepazangus, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&normalus, char galutinio\+Budas)
+\item 
+\Hypertarget{functions_8cpp_a6ae294fdfd1f2449bb1e979ab6444b5f}\label{functions_8cpp_a6ae294fdfd1f2449bb1e979ab6444b5f} 
+void {\bfseries pirmas} (std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, char spaus\+Budas, char rusiavimo\+Budas, char galutinio\+Budas, int p\+Kiekis)
+\item 
+\Hypertarget{functions_8cpp_a311b238b913219da0c07a4913e3fb6ae}\label{functions_8cpp_a311b238b913219da0c07a4913e3fb6ae} 
+void {\bfseries antras} (std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, char spaus\+Budas, char rusiavimo\+Budas, char galutinio\+Budas, int p\+Kiekis)
+\item 
+\Hypertarget{functions_8cpp_ab628101e6c9acb80869c0463efaf877d}\label{functions_8cpp_ab628101e6c9acb80869c0463efaf877d} 
+void {\bfseries trecias} (std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, const std\+::vector$<$ std\+::string $>$ \&vardai, const std\+::vector$<$ std\+::string $>$ \&pavardes, char spaus\+Budas, char rusiavimo\+Budas, char galutinio\+Budas, int p\+Kiekis)
+\item 
+\Hypertarget{functions_8cpp_ae7df39fe6e3b77fc742ede83e3200327}\label{functions_8cpp_ae7df39fe6e3b77fc742ede83e3200327} 
+void {\bfseries ketvirtas} (std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, int p\+Kiekis, char galutinio\+Budas)
+\item 
+\Hypertarget{functions_8cpp_a04e84ab92083f1922c356aabe5432b30}\label{functions_8cpp_a04e84ab92083f1922c356aabe5432b30} 
+void {\bfseries penktas} (int p\+Kiekis)
+\item 
+\Hypertarget{functions_8cpp_aad5f7f90f30969b63402a776ae89965c}\label{functions_8cpp_aad5f7f90f30969b63402a776ae89965c} 
+void {\bfseries sestas} (std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&grupe, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&test\+Grupe, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&nepazangus, std\+::vector$<$ \mbox{\hyperlink{classstudent}{student}} $>$ \&normalus, char galutinio\+Budas, char rusiavimo\+Budas, int p\+Kiekis)
+\item 
+\Hypertarget{functions_8cpp_aad94ddf399a3dcde60a082e5c64ad41a}\label{functions_8cpp_aad94ddf399a3dcde60a082e5c64ad41a} 
+void {\bfseries septintas} (char galutinio\+Budas)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{functions_8cpp_ac03617d9bc61db859465f205cae32ec4}\label{functions_8cpp_ac03617d9bc61db859465f205cae32ec4} 
+double {\bfseries programos\+Laikas}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this file contains all functions 
+
+\begin{DoxyAuthor}{Author}
+Narbas 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+v2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/07
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}

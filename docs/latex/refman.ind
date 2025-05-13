@@ -1,0 +1,27 @@
+\begin{theindex}
+
+  \item {C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/include/functions.h}, 
+		\hyperpage{9, 10}
+  \item {C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/include/student.h}, 
+		\hyperpage{10, 11}
+  \item {C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/source/functions.cpp}, 
+		\hyperpage{13}
+  \item {C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/source/main.cpp}, 
+		\hyperpage{14}
+  \item {C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/source/student.cpp}, 
+		\hyperpage{15}
+  \item {C:/Users/Lenovo/Desktop/2-\/uzduotis/vector/source/utils.h}, 
+		\hyperpage{16}
+
+  \indexspace
+
+  \item {Human}, \hyperpage{7}
+
+  \indexspace
+
+  \item {skaiciuotiGalutini}
+    \subitem {student}, \hyperpage{8}
+  \item {student}, \hyperpage{7}
+    \subitem {skaiciuotiGalutini}, \hyperpage{8}
+
+\end{theindex}
