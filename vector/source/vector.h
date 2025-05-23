@@ -11,9 +11,9 @@
 template<typename T>
 class Vector {
 private:
-    T*      data;
-    size_t  size_;
-    size_t  capacity_;
+    T* data;
+    size_t size_;
+    size_t capacity_;
 
     void reallocate(size_t newCap) {
         T* newData = new T[newCap];
@@ -117,6 +117,9 @@ public:
     }
 
     void clear() noexcept {
+        for (size_t i = 0; i < size_; ++i){
+            data[i].~T();
+        }
         size_ = 0;
     }
 
@@ -137,7 +140,7 @@ public:
     void pop_back() {
         if (size_ == 0)
             throw std::out_of_range("pop_back() on empty Vector");
-        --size_;
+        data[--size_].~T();
     }
 
     void swap(Vector& other) noexcept {
@@ -155,12 +158,9 @@ public:
 
     template<typename InputIt>
     void assign(InputIt first, InputIt last) {
-        size_t n = std::distance(first, last);
-        if (n > capacity_) reserve(n);
-        size_t i = 0;
-        for (auto it = first; it != last; ++it, ++i)
-            data[i] = *it;
-        size_ = n;
+        clear();
+        for (; first != last; ++first)
+            push_back(*first);
     }
 
     // insert / erase
@@ -183,14 +183,20 @@ public:
         return data + idx;
     }
 
-    iterator erase(const_iterator pos) {
+    iterator erase(const_iterator pos){
         size_t idx = pos - data;
-        if (idx >= size_) return end();
-        for (size_t i = idx; i + 1 < size_; ++i)
-            data[i] = data[i+1];
+        if (idx >= size_){
+            return end();
+        }
+        data[idx].~T();
+        for (size_t i = idx; i + 1 < size_; ++i) {
+            data[i] = std::move(data[i+1]);
+        }
+        data[size_ - 1].~T();
         --size_;
         return data + idx;
     }
+
 
     // emplacement
     template<typename... Args>

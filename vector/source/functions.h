@@ -31,4 +31,5 @@ void ketvirtas(std::vector<student>& grupe, int pKiekis, char galutinioBudas);
 void penktas(int pKiekis);
 void sestas(std::vector<student>& grupe, std::vector<student>& testGrupe, std::vector<student>& nepazangus, std::vector<student>& normalus, char galutinioBudas, char rusiavimoBudas, int pKiekis);
 void septintas(char galutinioBudas);
+void astuntas();
 #endif

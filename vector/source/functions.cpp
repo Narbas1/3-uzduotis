@@ -20,6 +20,7 @@
 #include <random>
 #include "student.h"
 #include "functions.h"
+#include "vector.h"
 
 extern double programosLaikas;
 
@@ -601,4 +602,32 @@ void septintas(char galutinioBudas){
 
 
     
+}
+void astuntas(){
+
+    unsigned int sz = 1000;
+
+    std::vector<int> v;
+    Vector<int> v1;
+
+    std::cout << "std::vector: \n";
+    for(int i = 0; i < sz; ++i){
+        v.push_back(i);
+    }
+    
+    std::cout << "my vector: \n";
+    for(int i = 0; i < sz; ++i){
+        v1.push_back(i);
+    }
+
+    for(int i = 0; i < sz; ++i){
+        std::cout << v[i];
+        std::cout << "\n";
+    }
+
+    for(int i = 0; i < sz; ++i){
+        std::cout << v1[i];
+        std::cout << "\n";
+    }
+
 }

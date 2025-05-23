@@ -27,8 +27,6 @@ double programosLaikas = 0.0;
 
 int main(){
 
-    //Human h;
-
     int pKiekis, meniu;
     float vidurkis, mediana;
     char galutinioBudas, spausBudas, rusiavimoBudas;
@@ -48,14 +46,15 @@ int main(){
                       << "5 - generuoti faila\n "
                       << "6 - generuoto failo nuskaitymas\n "
                       << "7 - ctor ir operatoriu veikimo testai\n"
-                      << "8 - baigti darba" << std::endl;
+                      << "8 - std::vector ir nuosavo vector testai\n"
+                      << "9 - baigti darba" << std::endl;
 
             std::cin >> meniu;
             
             if (std::cin.fail()) {
                 throw std::runtime_error("Neteisinga ivestis, iveskite skaiciu.");
             }
-            if (meniu < 1 || meniu > 8) {
+            if (meniu < 1 || meniu > 9) {
                 throw std::runtime_error("Neteisinga ivestis, iveskite skaiciu tarp 1 ir 8.");
             }
             break;
@@ -67,7 +66,7 @@ int main(){
         }
     }
 
-    if(meniu >=1 && meniu <= 7){
+    if(meniu >=1 && meniu <= 9){
 
             
         char galutinioBudas = tikrintiInput<char>(
@@ -146,19 +145,21 @@ int main(){
             septintas(galutinioBudas);
             break;
         case 8:
+            astuntas();
+            break;
+        case 9:
             std::cout << "Isejote is programos." << std::endl;
             ciklas = false;
             break;
-
         default:
             std::cout << "Ivedete bloga skaiciu, veskite is naujo: \n";
             continue;
         }
 
-        std::cout << "Pasirinkite kita veiksma (1-8): " << std::endl;
+        std::cout << "Pasirinkite kita veiksma (1-9): " << std::endl;
         std::cin >> meniu;
 
-        while(meniu < 1 || meniu > 8){
+        while(meniu < 1 || meniu > 9){
             std::cout << "Ivedete neteisinga skaiciu, veskite is naujo: " << std::endl;
             std::cin >> meniu;
         }
