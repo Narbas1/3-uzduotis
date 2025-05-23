@@ -14,22 +14,23 @@
 
 #include <vector>
 #include "student.h"
+#include "vector.h"
 
-void rusiuotiOutput(std::vector<student>& grupe, char rusiavimoBudas, char galutinioBudas);
-void spausdinimasTerminale(const std::vector<student>& grupe, char galutinioBudas);
-void spausdinimasFaile(const std::vector<student>& grupe, char galutinioBudas);
+void rusiuotiOutput(Vector<student>& grupe, char rusiavimoBudas, char galutinioBudas);
+void spausdinimasTerminale(const Vector<student>& grupe, char galutinioBudas);
+void spausdinimasFaile(const Vector<student>& grupe, char galutinioBudas);
 void generuotiFaila(int pKiekis, int studentuKiekis, const std::string& failoPavadinimas);
-void spausdinimas(char spausBudas, char rusiavimoBudas, char galutinioBudas, std::vector<student>&grupe);
-void sortedStudentSpausdinimas(std:: string lowGradeFailas, std::string highGradeFailas, std::vector<student>&nepazangus, std::vector<student>&normalus, char galutinioBudas);
-void nuskaitytiGeneruotusFailus(const std::string& failoPavadinimas, std::vector<student> & grupe, int pKiekis, char galutinioBudas);
-void skirstytiStudentus(std::vector<student> & grupe, std::vector<student>& nepazangus, std::vector<student>& normalus, char galutinioBudas);
+void spausdinimas(char spausBudas, char rusiavimoBudas, char galutinioBudas, Vector<student>&grupe);
+void sortedStudentSpausdinimas(std::string lowGradeFailas, std::string highGradeFailas, Vector<student>&nepazangus, Vector<student>&normalus, char galutinioBudas);
+void nuskaitytiGeneruotusFailus(const std::string& failoPavadinimas, Vector<student> & grupe, int pKiekis, char galutinioBudas);
+void skirstytiStudentus(Vector<student> & grupe, Vector<student>& nepazangus, Vector<student>& normalus, char galutinioBudas);
 
-void pirmas(std::vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis);
-void antras(std::vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis);
-void trecias(std::vector<student>& grupe, const std::vector<std::string>& vardai, const std::vector<std::string>& pavardes, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis);
-void ketvirtas(std::vector<student>& grupe, int pKiekis, char galutinioBudas);
+void pirmas(Vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis);
+void antras(Vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis);
+void trecias(Vector<student>& grupe, const Vector<std::string>& vardai, const Vector<std::string>& pavardes, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis);
+void ketvirtas(Vector<student>& grupe, int pKiekis, char galutinioBudas);
 void penktas(int pKiekis);
-void sestas(std::vector<student>& grupe, std::vector<student>& testGrupe, std::vector<student>& nepazangus, std::vector<student>& normalus, char galutinioBudas, char rusiavimoBudas, int pKiekis);
+void sestas(Vector<student>& grupe, Vector<student>& testGrupe, Vector<student>& nepazangus, Vector<student>& normalus, char galutinioBudas, char rusiavimoBudas, int pKiekis);
 void septintas(char galutinioBudas);
 void astuntas();
 #endif

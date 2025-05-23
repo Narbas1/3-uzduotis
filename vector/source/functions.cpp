@@ -24,7 +24,7 @@
 
 extern double programosLaikas;
 
-void rusiuotiOutput(std::vector<student>& grupe, char rusiavimoBudas, char galutinioBudas){
+void rusiuotiOutput(Vector<student>& grupe, char rusiavimoBudas, char galutinioBudas){
     
     if(rusiavimoBudas == 'p'){
         std::sort(grupe.begin(), grupe.end(), [](const student& a, const student& b){
@@ -46,7 +46,7 @@ void rusiuotiOutput(std::vector<student>& grupe, char rusiavimoBudas, char galut
     }
 }
 
-void spausdinimasTerminale(const std::vector<student>& grupe, char galutinioBudas){
+void spausdinimasTerminale(const Vector<student>& grupe, char galutinioBudas){
 
     std::cout << std::left << std::setw(15) << "Pavarde" << std::setw(20) << "Vardas" << std::setw(20) << "Galutinis(vid./med.)" << '\n'
       << "-------------------------------------------------------------------" << '\n';
@@ -73,7 +73,7 @@ void spausdinimasTerminale(const std::vector<student>& grupe, char galutinioBuda
     }
 }
 
-void spausdinimasFaile(const std::vector<student>& grupe, char galutinioBudas){
+void spausdinimasFaile(const Vector<student>& grupe, char galutinioBudas){
 
     std::ofstream outFile("duomenys.txt");
     if (!outFile) {
@@ -140,7 +140,7 @@ void generuotiFaila(int pKiekis, int studentuKiekis, const std::string& failoPav
     }
 }
 
-void spausdinimas(char spausBudas, char rusiavimoBudas, char galutinioBudas, std::vector<student>& grupe){
+void spausdinimas(char spausBudas, char rusiavimoBudas, char galutinioBudas, Vector<student>& grupe){
 
     while (spausBudas != 't' && spausBudas != 'f') {
         std::cout << "Pasirinkite t/f: ";
@@ -157,7 +157,7 @@ void spausdinimas(char spausBudas, char rusiavimoBudas, char galutinioBudas, std
     }
 }
 
-void sortedStudentSpausdinimas(std:: string lowGradeFailas, std::string highGradeFailas, std::vector<student>&nepazangus, std::vector<student>&normalus, char galutinioBudas){
+void sortedStudentSpausdinimas(std::string lowGradeFailas, std::string highGradeFailas, Vector<student>&nepazangus, Vector<student>&normalus, char galutinioBudas){
     std::ofstream outFile(lowGradeFailas);
 
     if (!outFile.is_open()) {
@@ -230,7 +230,7 @@ void sortedStudentSpausdinimas(std:: string lowGradeFailas, std::string highGrad
     programosLaikas += spausdinimoLaikas1.count();
 }
 
-void nuskaitytiGeneruotusFailus(const std::string& failoPavadinimas, std::vector<student>& grupe, int pKiekis, char galutinioBudas){
+void nuskaitytiGeneruotusFailus(const std::string& failoPavadinimas, Vector<student>& grupe, int pKiekis, char galutinioBudas){
 
     std::ifstream inFile(failoPavadinimas);
     if (!inFile) {
@@ -241,7 +241,7 @@ void nuskaitytiGeneruotusFailus(const std::string& failoPavadinimas, std::vector
     std::getline(inFile, l);
     std::getline(inFile, l);
 
-    std::vector<float> pazymiai;
+    Vector<float> pazymiai;
     pazymiai.reserve(pKiekis);
 
     std::string vardas, pavarde;
@@ -262,7 +262,7 @@ void nuskaitytiGeneruotusFailus(const std::string& failoPavadinimas, std::vector
         grupe.back().skaiciuotiGalutini(galutinioBudas);
     }
 }
-void skirstytiStudentus(std::vector<student>& grupe, std::vector<student>& nepazangus, std::vector<student>& normalus, char galutinioBudas){
+void skirstytiStudentus(Vector<student>& grupe, Vector<student>& nepazangus, Vector<student>& normalus, char galutinioBudas){
 
     size_t n = grupe.size();
     normalus.clear();   normalus.reserve(n);
@@ -290,10 +290,10 @@ void skirstytiStudentus(std::vector<student>& grupe, std::vector<student>& nepaz
     }
     grupe.clear();
 }
-void pirmas(std::vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis){
+void pirmas(Vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis){
     
     std::string tempVardas, tempPavarde;
-    std::vector<float> pazymiai;
+    Vector<float> pazymiai;
     float tempEgz = 0.0f;
     pazymiai.reserve(pKiekis);
 
@@ -376,10 +376,10 @@ void pirmas(std::vector<student>& grupe, char spausBudas, char rusiavimoBudas, c
     spausdinimas(spausBudas, rusiavimoBudas, galutinioBudas, grupe);
     
 }
-void antras(std::vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis){
+void antras(Vector<student>& grupe, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis){
 
     std::string tempVardas, tempPavarde;
-    std::vector<float> pazymiai;
+    Vector<float> pazymiai;
     pazymiai.reserve(pKiekis);
 
     std::cout << "Iveskite studento varda: " << std::endl;
@@ -400,7 +400,7 @@ void antras(std::vector<student>& grupe, char spausBudas, char rusiavimoBudas, c
     grupe.back().skaiciuotiGalutini(galutinioBudas);
     spausdinimas(spausBudas, rusiavimoBudas, galutinioBudas, grupe);
 }
-void trecias(std::vector<student>& grupe, const std::vector<std::string>& vardai, const std::vector<std::string>& pavardes, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis){
+void trecias(Vector<student>& grupe, const Vector<std::string>& vardai, const Vector<std::string>& pavardes, char spausBudas, char rusiavimoBudas, char galutinioBudas, int pKiekis){
 
     static std::mt19937 rng{std::random_device{}()};
     std::uniform_int_distribution<int> xDist(0, vardai.size()-1);
@@ -408,7 +408,7 @@ void trecias(std::vector<student>& grupe, const std::vector<std::string>& vardai
 
     int x = xDist(rng);
 
-    std::vector<float> pazymiai;
+    Vector<float> pazymiai;
     pazymiai.reserve(pKiekis);
     for (int i = 0; i < pKiekis; ++i) {
         pazymiai.push_back(gradeDist(rng));
@@ -420,7 +420,7 @@ void trecias(std::vector<student>& grupe, const std::vector<std::string>& vardai
     spausdinimas(spausBudas, rusiavimoBudas, galutinioBudas, grupe);
 }
 
-void ketvirtas(std::vector<student>& grupe, int pKiekis, char galutinioBudas) {
+void ketvirtas(Vector<student>& grupe, int pKiekis, char galutinioBudas) {
     auto pradzia = std::chrono::steady_clock::now();
 
     std::ifstream inFile("studentai10000.txt");
@@ -439,7 +439,7 @@ void ketvirtas(std::vector<student>& grupe, int pKiekis, char galutinioBudas) {
             continue;
 
 
-        std::vector<float> pazymiai;
+        Vector<float> pazymiai;
         pazymiai.reserve(pKiekis);
         std::istringstream token(line);
         std::string tempVardas, tempPavarde;
@@ -480,7 +480,7 @@ void penktas(int pKiekis){
         programosLaikas += generavimoLaikas.count();
     }
 }
-void sestas(std::vector<student>& grupe, std::vector<student>& testGrupe, std::vector<student>& nepazangus, std::vector<student>& normalus, char galutinioBudas, char rusiavimoBudas, int pKiekis){
+void sestas(Vector<student>& grupe, Vector<student>& testGrupe, Vector<student>& nepazangus, Vector<student>& normalus, char galutinioBudas, char rusiavimoBudas, int pKiekis){
     student studentas;
     testGrupe.clear();
     normalus.clear();
@@ -498,8 +498,7 @@ void sestas(std::vector<student>& grupe, std::vector<student>& testGrupe, std::v
 
     for(int i = 0; i < 5; i++){
         
-        std::string failoPavadinimas = "test.txt";
-        failoPavadinimas.insert(4, 1, '0' + (i+1));
+        std::string failoPavadinimas = "test" + std::to_string(i+1) + ".txt";
 
         std::string lowGradeFailas = "nepazangus.txt";
         lowGradeFailas.insert(10, 1, '0' + (i+1));
@@ -605,29 +604,64 @@ void septintas(char galutinioBudas){
 }
 void astuntas(){
 
-    unsigned int sz = 1000;
-
     std::vector<int> v;
     Vector<int> v1;
 
-    std::cout << "std::vector: \n";
-    for(int i = 0; i < sz; ++i){
+    std::cout << std::fixed << std::setprecision(4);
+
+    for(int sz = 10000; sz < 100000001; sz = sz*10){
+        v.clear();
+        v1.clear();
+        v.reserve(sz);
+        v1.reserve(sz);
+        
+        auto startV = std::chrono::high_resolution_clock::now();
+        for(std::size_t i = 0; i < sz; ++i){
+            v.push_back(i);
+        }
+        auto endV = std::chrono::high_resolution_clock::now();
+
+        auto startV1 = std::chrono::high_resolution_clock::now();
+        for(std::size_t i = 0; i < sz; ++i){
+            v1.push_back(i);
+        }
+        auto endV1 = std::chrono::high_resolution_clock::now();
+
+        double durationV  = std::chrono::duration_cast<std::chrono::milliseconds>(endV  - startV ).count();
+        double durationV1 = std::chrono::duration_cast<std::chrono::milliseconds>(endV1 - startV1).count();
+        
+        std::cout << sz << " skaiciu: \n" << "std::vector duration: " << durationV/1000.0 << "s\n";
+        std::cout << sz << " skaiciu: \n" << "my vector duration: " << durationV1/1000.0 << "s\n";
+        std::cout << "-------------------------------------------------------------------------------------\n";
+    }
+
+    //reallocations
+    v.clear();
+    v1.clear();
+    v.shrink_to_fit();
+    v1.shrink_to_fit();
+    size_t c = v.capacity();
+    size_t c1 = v1.capacity();
+    size_t r = 0;
+    size_t r1 = 0;
+
+    for(int i = 0; i < 100000000; ++i){
         v.push_back(i);
+        if(v.capacity() != c){
+            ++r;
+            c = v.capacity();
+        }
     }
-    
-    std::cout << "my vector: \n";
-    for(int i = 0; i < sz; ++i){
+
+    std::cout << "std::vector realokacijos:" << r << " \n";
+
+    for(int i = 0; i < 100000000; ++i){
         v1.push_back(i);
+        if(v1.capacity() != c1){
+            ++r1;
+            c1 = v1.capacity();
+        }
     }
-
-    for(int i = 0; i < sz; ++i){
-        std::cout << v[i];
-        std::cout << "\n";
-    }
-
-    for(int i = 0; i < sz; ++i){
-        std::cout << v1[i];
-        std::cout << "\n";
-    }
+    std::cout << "my vector realokacijos:" << r1 << " \n";
 
 }

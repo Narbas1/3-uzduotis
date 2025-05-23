@@ -15,7 +15,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-
+#include "vector.h"
 class Human{
     protected:
 
@@ -44,7 +44,7 @@ class student : public Human{
 
     private:
         
-        std::vector<float> pazymiai{};
+        Vector<float> pazymiai{};
         float egzaminoRezultatas = 0.0f;
         float galutinisM = 0.0f;
         float galutinisV = 0.0f;
@@ -95,16 +95,16 @@ class student : public Human{
     friend std::istream& operator >> (std::istream& in, student& studentas);
 
     //parametrizuotas ctor
-    student(std::string v, std::string p, std::vector<float> pazymiai, float egz) noexcept : Human(v, p), pazymiai(std::move(pazymiai)), egzaminoRezultatas(egz) {}
+    student(std::string v, std::string p, Vector<float> pazymiai, float egz) noexcept : Human(v, p), pazymiai(std::move(pazymiai)), egzaminoRezultatas(egz) {}
 
     //setters
-    void setPazymiai(std::vector<float> paz) noexcept{ pazymiai = std::move(paz); }
+    void setPazymiai(Vector<float> paz) noexcept{ pazymiai = std::move(paz); }
     void setEgzaminoRezultatas(float egz) noexcept { egzaminoRezultatas = egz; }
     void setGalutinisV(float V) noexcept { galutinisV = V; }
     void setGalutinisM(float M) noexcept { galutinisM = M; }
 
     //getters
-    const std::vector<float>& getPazymiai() const { return pazymiai; }
+    const Vector<float>& getPazymiai() const { return pazymiai; }
     float getEgzaminoRezultatas() const { return egzaminoRezultatas; }
     float getGalutinisV() const { return galutinisV; }
     float getGalutinisM() const { return galutinisM; }

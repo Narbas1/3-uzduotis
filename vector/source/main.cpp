@@ -22,6 +22,7 @@
 #include "functions.h"
 #include <iomanip>
 #include "utils.h"
+#include "vector.h"
 
 double programosLaikas = 0.0;
 
@@ -30,10 +31,10 @@ int main(){
     int pKiekis, meniu;
     float vidurkis, mediana;
     char galutinioBudas, spausBudas, rusiavimoBudas;
-    std::vector<student> grupe, testGrupe, nepazangus, normalus;
+    Vector<student> grupe, testGrupe, nepazangus, normalus;
     srand(time(0));
-    std::vector<std::string>vardai = {"Jonas", "Paulius", "Matas", "Tomas", "Vardenis"};
-    std::vector<std::string>pavardes = {"Jonavicius", "Pauliavicius", "Matavicius", "Tomavicius", "Pavardenis"};
+    Vector<std::string>vardai = {"Jonas", "Paulius", "Matas", "Tomas", "Vardenis"};
+    Vector<std::string>pavardes = {"Jonavicius", "Pauliavicius", "Matavicius", "Tomavicius", "Pavardenis"};
 
     while (true) {
 
