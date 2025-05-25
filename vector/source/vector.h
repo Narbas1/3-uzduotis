@@ -18,7 +18,7 @@ private:
     void reallocate(size_t newCap) {
         T* newData = new T[newCap];
         for (size_t i = 0; i < size_; ++i)
-            newData[i] = data[i];
+            newData[i] = std::move(data[i]);
         delete[] data;
         data     = newData;
         capacity_ = newCap;
@@ -117,9 +117,6 @@ public:
     }
 
     void clear() noexcept {
-        for (size_t i = 0; i < size_; ++i){
-            data[i].~T();
-        }
         size_ = 0;
     }
 
@@ -188,11 +185,9 @@ public:
         if (idx >= size_){
             return end();
         }
-        data[idx].~T();
         for (size_t i = idx; i + 1 < size_; ++i) {
             data[i] = std::move(data[i+1]);
         }
-        data[size_ - 1].~T();
         --size_;
         return data + idx;
     }

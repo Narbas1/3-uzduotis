@@ -497,7 +497,7 @@ void sestas(Vector<student>& grupe, Vector<student>& testGrupe, Vector<student>&
     }
 
     for(int i = 0; i < 5; i++){
-        
+        std::cout << i << "\n";
         std::string failoPavadinimas = "test" + std::to_string(i+1) + ".txt";
 
         std::string lowGradeFailas = "nepazangus.txt";
@@ -663,5 +663,38 @@ void astuntas(){
         }
     }
     std::cout << "my vector realokacijos:" << r1 << " \n";
+
+    //testai su Student klase
+
+    Vector<student> vec1;
+    std::vector<student> vec2;
+
+    std::cout << "\n\n\n";
+
+    for(int sz = 10000; sz < 100000001; sz = sz*10){
+        
+        auto startVec1 = std::chrono::high_resolution_clock::now();
+        for(std::size_t i = 0; i < sz; ++i){
+            student s;
+            vec1.push_back(s);
+        }
+        auto endVec1 = std::chrono::high_resolution_clock::now();
+
+        auto startVec2 = std::chrono::high_resolution_clock::now();
+        student s;
+        for(std::size_t i = 0; i < sz; ++i){
+            vec2.push_back(s);
+        }
+        auto endVec2 = std::chrono::high_resolution_clock::now();
+
+        double durationVec1  = std::chrono::duration_cast<std::chrono::milliseconds>(endVec1  - startVec1 ).count();
+        double durationVec2 = std::chrono::duration_cast<std::chrono::milliseconds>(endVec2 - startVec2).count();
+        
+        std::cout << sz << " studentu: \n" << "std::vector duration: " << durationVec1/1000.0 << "s\n";
+        std::cout << sz << " studentu: \n" << "my vector duration: " << durationVec2/1000.0 << "s\n";
+        std::cout << "-------------------------------------------------------------------------------------\n";
+    }
+
+
 
 }

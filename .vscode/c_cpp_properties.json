@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "name": "MinGW x64",
+      "compilerPath": "C:/MINGW64/mingw64/bin/g++.exe",
+      "intelliSenseMode": "gcc-x64",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "includePath": [
+        "${workspaceFolder}/vector/include",
+        "${workspaceFolder}/third_party",
+        "${workspaceFolder}/tests"
+      ],
+      "browse": {
+        "path": [
+          "${workspaceFolder}/vector/include",
+          "${workspaceFolder}/third_party",
+          "${workspaceFolder}/tests"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
+}
