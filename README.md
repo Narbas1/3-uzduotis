@@ -277,5 +277,26 @@ Visi metodai praejo testavima:
 
 <img width="349" alt="Screenshot 2025-05-12 003035" src="https://github.com/user-attachments/assets/0d644af3-7e1b-4cd3-bf8e-103d56ed3e9c" />
 
+# v3.0
+
+Buvo sukurta nuosava Vector klase, kuri turi pagrindinius std::vector metodus.
+Atminties perskirstymas std::vector ir Vector buvo 28 kartai.
+
+Testu su int vidurkiai:
+
+| Elements | std::vector (avg) | Custom Vector (avg) |
+|----------|-------------------|---------------------|
+| 10,000 | 0.0000s | 0.0000s |
+| 100,000 | 0.0000s | 0.0000s |
+| 1,000,000 | 0.0003s | 0.0003s |
+| 10,000,000 | 0.0077s | 0.0093s |
+| 100,000,000 | 0.0897s | 0.0810s |
+
+Buvo atlikti unit testai ivairiems metodams, visi jie praejo:
+
+![image](https://github.com/user-attachments/assets/cf5d1302-a419-412e-be75-cf661f3907a5)
+
+
+
 
 
