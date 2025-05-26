@@ -292,11 +292,29 @@ Testu su int vidurkiai:
 | 10,000,000 | 0.0077s | 0.0093s |
 | 100,000,000 | 0.0897s | 0.0810s |
 
+Testu su studentais vidurkiai:
+
+| Students | std::vector | my vector |
+|----------|-------------------|-----------------|
+| 10,000 | 0.0000s | 0.0000s |
+| 100,000 | 0.0050s | 0.0050s |
+| 1,000,000 | 0.1060s | 0.0840s |
+| 10,000,000 | 0.8475s | 0.7795s |
+| 100,000,000 | 35.0965s | 24.3160s |
+
 Buvo atlikti unit testai ivairiems metodams, visi jie praejo:
 
 ![image](https://github.com/user-attachments/assets/cf5d1302-a419-412e-be75-cf661f3907a5)
 
 
+Programos spartos testavimas su nuosava Vector klase:
+Rezultatai panasus lyginant su praeitu versiju testais, kai buvo naudojamas std::vector.
 
-
+| Studentų skaičius | Failo nuskaitymas (s) | Studentų skirstymas (s) | Normalių rūšiavimas (s) | Nepažangių rūšiavimas (s) | Bendras laikas (s) |
+|:-----------------:|:--------------------:|:----------------------:|:----------------------:|:------------------------:|:-----------------:|
+| 1,000 | 0.0186 | 0.0003 | 0.0001 | 0.0000 | 0.0271 |
+| 10,000 | 0.1741 | 0.0025 | 0.0008 | 0.0006 | 0.2311 |
+| 100,000 | 1.5045 | 0.0176 | 0.0067 | 0.0052 | 1.7696 |
+| 1,000,000 | 10.8061 | 0.1344 | 0.0908 | 0.0685 | 13.7586 |
+| 10,000,000 | 107.6847 | 1.4313 | 1.1022 | 0.7620 | 135.1421 |
 
