@@ -672,7 +672,6 @@ void astuntas(){
     std::cout << "\n\n\n";
 
     for(int sz = 10000; sz < 100000001; sz = sz*10){
-        
         auto startVec1 = std::chrono::high_resolution_clock::now();
         for(std::size_t i = 0; i < sz; ++i){
             student s;

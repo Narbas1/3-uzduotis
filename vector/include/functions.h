@@ -13,8 +13,8 @@
 #define FUNCTIONS_H
 
 #include <vector>
-#include "student.h"
-#include "vector.h"
+#include "../include/student.h"
+#include "../include/vector.h"
 
 void rusiuotiOutput(Vector<student>& grupe, char rusiavimoBudas, char galutinioBudas);
 void spausdinimasTerminale(const Vector<student>& grupe, char galutinioBudas);

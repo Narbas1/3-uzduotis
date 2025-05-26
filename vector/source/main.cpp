@@ -18,11 +18,11 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
-#include "student.h"
-#include "functions.h"
+#include "../include/student.h"
+#include "../include/functions.h"
 #include <iomanip>
-#include "utils.h"
-#include "vector.h"
+#include "../include/utils.h"
+#include "../include/vector.h"
 
 double programosLaikas = 0.0;
 

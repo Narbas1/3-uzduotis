@@ -3,8 +3,8 @@
 #include <type_traits>
 #include <sstream>  // for operator<< test
 
-#include "../vector/source/functions.h"
-#include "../vector/source/student.h"
+#include "../vector/include/functions.h"
+#include "../vector/include/student.h"
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Vector

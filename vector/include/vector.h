@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <iterator>
 #include <utility>
+#include <memory>
 
 template<typename T>
 class Vector {
@@ -16,11 +17,32 @@ private:
     size_t capacity_;
 
     void reallocate(size_t newCap) {
-        T* newData = new T[newCap];
-        for (size_t i = 0; i < size_; ++i)
-            newData[i] = std::move(data[i]);
-        delete[] data;
-        data     = newData;
+        // Allocate raw memory
+        T* newData = static_cast<T*>(::operator new(newCap * sizeof(T)));
+        
+        // Move construct elements to new location
+        for (size_t i = 0; i < size_; ++i) {
+            try {
+                new(newData + i) T(std::move(data[i]));
+            } catch (...) {
+                // Clean up on exception
+                for (size_t j = 0; j < i; ++j) {
+                    (newData + j)->~T();
+                }
+                ::operator delete(newData);
+                throw;
+            }
+        }
+        
+        // Destroy old elements
+        for (size_t i = 0; i < size_; ++i) {
+            (data + i)->~T();
+        }
+        
+        // Free old memory
+        ::operator delete(data);
+        
+        data = newData;
         capacity_ = newCap;
     }
 
@@ -33,38 +55,47 @@ public:
       : data(nullptr), size_(0), capacity_(0)
     {
         reserve(init.size());
-        for (const auto& x : init)
+        for (const auto& x : init) {
             push_back(x);
+        }
     }
 
     // destructor
     ~Vector() {
-        delete[] data;
+        clear();
+        ::operator delete(data);
     }
 
     // copy ctor
     Vector(const Vector& other)
-      : data(nullptr), size_(other.size_), capacity_(other.capacity_)
+      : data(nullptr), size_(0), capacity_(0)
     {
-        if (capacity_) {
-            data = new T[capacity_];
-            for (size_t i = 0; i < size_; ++i)
-                data[i] = other.data[i];
+        if (other.size_ > 0) {
+            reserve(other.capacity_);
+            for (size_t i = 0; i < other.size_; ++i) {
+                try {
+                    new(data + i) T(other.data[i]);
+                    ++size_;
+                } catch (...) {
+                    // Clean up constructed elements
+                    for (size_t j = 0; j < i; ++j) {
+                        (data + j)->~T();
+                    }
+                    ::operator delete(data);
+                    data = nullptr;
+                    size_ = 0;
+                    capacity_ = 0;
+                    throw;
+                }
+            }
         }
     }
 
     // copy assignment
     Vector& operator=(const Vector& other) {
         if (this != &other) {
-            delete[] data;
-            size_ = other.size_;
-            capacity_ = other.capacity_;
-            data = nullptr;
-            if (capacity_) {
-                data = new T[capacity_];
-                for (size_t i = 0; i < size_; ++i)
-                    data[i] = other.data[i];
-            }
+            Vector temp(other);  // Copy-and-swap idiom
+            swap(temp);
         }
         return *this;
     }
@@ -75,16 +106,19 @@ public:
     {
         other.data = nullptr;
         other.size_ = 0;
-        other.capacity_= 0;
+        other.capacity_ = 0;
     }
 
     // move assignment
     Vector& operator=(Vector&& other) noexcept {
         if (this != &other) {
-            delete[] data;
+            clear();
+            ::operator delete(data);
+            
             data = other.data;
             size_ = other.size_;
             capacity_ = other.capacity_;
+            
             other.data = nullptr;
             other.size_ = 0;
             other.capacity_ = 0;
@@ -99,6 +133,7 @@ public:
             if (data[i] != o.data[i]) return false;
         return true;
     }
+    
     bool operator!=(const Vector& o) const {
         return !(*this == o);
     }
@@ -109,35 +144,77 @@ public:
     bool   empty() const { return size_ == 0; }
 
     void reserve(size_t newCap) {
-        if (newCap > capacity_) reallocate(newCap);
+        if (newCap > capacity_) {
+            if (capacity_ == 0) {
+                data = static_cast<T*>(::operator new(newCap * sizeof(T)));
+                capacity_ = newCap;
+            } else {
+                reallocate(newCap);
+            }
+        }
     }
 
     void shrink_to_fit() {
-        if (capacity_ > size_) reallocate(size_);
+        if (capacity_ > size_) {
+            if (size_ == 0) {
+                ::operator delete(data);
+                data = nullptr;
+                capacity_ = 0;
+            } else {
+                reallocate(size_);
+            }
+        }
     }
 
     void clear() noexcept {
+        for (size_t i = 0; i < size_; ++i) {
+            (data + i)->~T();
+        }
         size_ = 0;
     }
 
     void resize(size_t count, const T& value = T()) {
-        if (count > capacity_) reserve(count);
-        for (size_t i = size_; i < count; ++i)
-            data[i] = value;
+        if (count > capacity_) {
+            reserve(count);
+        }
+        
+        if (count > size_) {
+            // Construct new elements
+            for (size_t i = size_; i < count; ++i) {
+                new(data + i) T(value);
+            }
+        } else if (count < size_) {
+            // Destroy excess elements
+            for (size_t i = count; i < size_; ++i) {
+                (data + i)->~T();
+            }
+        }
         size_ = count;
     }
 
     // modifiers
     void push_back(const T& value) {
-        if (size_ == capacity_)
+        if (size_ == capacity_) {
             reserve(capacity_ == 0 ? 1 : capacity_ * 2);
-        data[size_++] = value;
+        }
+        new(data + size_) T(value);
+        ++size_;
+    }
+
+    void push_back(T&& value) {
+        if (size_ == capacity_) {
+            reserve(capacity_ == 0 ? 1 : capacity_ * 2);
+        }
+        new(data + size_) T(std::move(value));
+        ++size_;
     }
 
     void pop_back() {
-        if (size_ == 0)
+        if (size_ == 0) {
             throw std::out_of_range("pop_back() on empty Vector");
-        data[--size_].~T();
+        }
+        --size_;
+        (data + size_)->~T();
     }
 
     void swap(Vector& other) noexcept {
@@ -147,17 +224,22 @@ public:
     }
 
     void assign(size_t n, const T& value) {
-        if (n > capacity_) reserve(n);
-        for (size_t i = 0; i < n; ++i)
-            data[i] = value;
+        clear();
+        if (n > capacity_) {
+            reserve(n);
+        }
+        for (size_t i = 0; i < n; ++i) {
+            new(data + i) T(value);
+        }
         size_ = n;
     }
 
     template<typename InputIt>
     void assign(InputIt first, InputIt last) {
         clear();
-        for (; first != last; ++first)
+        for (; first != last; ++first) {
             push_back(*first);
+        }
     }
 
     // insert / erase
@@ -171,34 +253,47 @@ public:
 
     iterator insert(const_iterator pos, const T& value) {
         size_t idx = pos - data;
-        if (size_ == capacity_)
+        if (size_ == capacity_) {
             reserve(capacity_ == 0 ? 1 : capacity_ * 2);
-        for (size_t i = size_; i > idx; --i)
-            data[i] = data[i-1];
-        data[idx] = value;
+        }
+        
+        // Shift elements to make room
+        for (size_t i = size_; i > idx; --i) {
+            new(data + i) T(std::move(data[i-1]));
+            (data + i - 1)->~T();
+        }
+        
+        new(data + idx) T(value);
         ++size_;
         return data + idx;
     }
 
-    iterator erase(const_iterator pos){
+    iterator erase(const_iterator pos) {
         size_t idx = pos - data;
-        if (idx >= size_){
+        if (idx >= size_) {
             return end();
         }
+        
+        // Destroy the element
+        (data + idx)->~T();
+        
+        // Shift remaining elements
         for (size_t i = idx; i + 1 < size_; ++i) {
-            data[i] = std::move(data[i+1]);
+            new(data + i) T(std::move(data[i + 1]));
+            (data + i + 1)->~T();
         }
+        
         --size_;
         return data + idx;
     }
 
-
     // emplacement
     template<typename... Args>
     void emplace_back(Args&&... args) {
-        if (size_ == capacity_)
+        if (size_ == capacity_) {
             reserve(capacity_ == 0 ? 1 : capacity_ * 2);
-        data[size_] = T(std::forward<Args>(args)...);
+        }
+        new(data + size_) T(std::forward<Args>(args)...);
         ++size_;
     }
 
