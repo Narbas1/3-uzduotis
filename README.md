@@ -284,7 +284,7 @@ Atminties perskirstymas std::vector ir Vector buvo 28 kartai.
 
 Testu su int vidurkiai:
 
-| Elements | std::vector (avg) | Custom Vector (avg) |
+| int | std::vector | my vector |
 |----------|-------------------|---------------------|
 | 10,000 | 0.0000s | 0.0000s |
 | 100,000 | 0.0000s | 0.0000s |
