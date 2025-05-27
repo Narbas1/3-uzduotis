@@ -1,10 +1,33 @@
-
 ## Programos paleidimo instrukcija ir reikalavimai:
+Reikia turėti cmake ir c++ compiler.
+Reikia atsidaryti terminala ir paleisti sias komandas.
 
-1. Reikia turėti cmake ir c++ compiler.
-2. Yra 3 programos kurios skiriasi naudojamais duomenų konteineriais (vector, deque ir list).
-3. Atidarykite norimą aplanką ir paleiskite .bat failą.
+# 1) Klonuoti repozitorija
+git clone https://github.com/YourUser/my-gradebook.git
+cd my-gradebook
 
+# 2) Sukurti build folderi
+mkdir build && cd build
+
+# 3) Konfiguravimas
+cmake .. -DCMAKE_BUILD_TYPE=Release
+
+# 4) Kompiliavimas
+cmake --build . --config Release
+
+# 5) Instaliavimas (in C:/Program Files/... arba jusu pasirinktas PATH)
+cpack -G NSIS -C Release
+
+---
+
+# Naudojimosi instrukcija.
+Naudotojas gali saugoti studentu duomenis(vardas, pavarde, pazymiai, egzamino pazymys)
+Galima generuoti pazymius atsitiktinai.
+Galima nuskaityti studentu duomenis is failo.
+Galima generuoti visus studentu duomenis atsitiktinai.
+Galima generuoti studentu duomenu failus ir juos testuoti.
+
+Programos eigoje yra pasirenkama kur isvesti duomenis, kokiu budu skaiciuoti studentu galutini vidurki.
 ---
 
 ## v0.1
