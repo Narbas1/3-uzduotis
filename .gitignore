@@ -1,3 +1,5 @@
 *.txt
 *.exe
-build/
+build
+/testavimas/
+/testavimas/2
