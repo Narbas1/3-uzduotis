@@ -17,15 +17,12 @@ private:
     size_t capacity_;
 
     void reallocate(size_t newCap) {
-        // Allocate raw memory
         T* newData = static_cast<T*>(::operator new(newCap * sizeof(T)));
-        
-        // Move construct elements to new location
+
         for (size_t i = 0; i < size_; ++i) {
             try {
                 new(newData + i) T(std::move(data[i]));
             } catch (...) {
-                // Clean up on exception
                 for (size_t j = 0; j < i; ++j) {
                     (newData + j)->~T();
                 }
@@ -33,15 +30,10 @@ private:
                 throw;
             }
         }
-        
-        // Destroy old elements
         for (size_t i = 0; i < size_; ++i) {
             (data + i)->~T();
         }
-        
-        // Free old memory
         ::operator delete(data);
-        
         data = newData;
         capacity_ = newCap;
     }
@@ -60,13 +52,11 @@ public:
         }
     }
 
-    // destructor
     ~Vector() {
         clear();
         ::operator delete(data);
     }
 
-    // copy ctor
     Vector(const Vector& other)
       : data(nullptr), size_(0), capacity_(0)
     {
@@ -77,7 +67,6 @@ public:
                     new(data + i) T(other.data[i]);
                     ++size_;
                 } catch (...) {
-                    // Clean up constructed elements
                     for (size_t j = 0; j < i; ++j) {
                         (data + j)->~T();
                     }
@@ -91,16 +80,14 @@ public:
         }
     }
 
-    // copy assignment
     Vector& operator=(const Vector& other) {
         if (this != &other) {
-            Vector temp(other);  // Copy-and-swap idiom
+            Vector temp(other);
             swap(temp);
         }
         return *this;
     }
 
-    // move ctor
     Vector(Vector&& other) noexcept
       : data(other.data), size_(other.size_), capacity_(other.capacity_)
     {
@@ -109,7 +96,6 @@ public:
         other.capacity_ = 0;
     }
 
-    // move assignment
     Vector& operator=(Vector&& other) noexcept {
         if (this != &other) {
             clear();
@@ -126,7 +112,6 @@ public:
         return *this;
     }
 
-    // element comparisons
     bool operator==(const Vector& o) const {
         if (size_ != o.size_) return false;
         for (size_t i = 0; i < size_; ++i)
@@ -138,7 +123,6 @@ public:
         return !(*this == o);
     }
 
-    // capacity
     size_t size() const { return size_; }
     size_t capacity() const { return capacity_; }
     bool   empty() const { return size_ == 0; }
@@ -192,7 +176,6 @@ public:
         size_ = count;
     }
 
-    // modifiers
     void push_back(const T& value) {
         if (size_ == capacity_) {
             reserve(capacity_ == 0 ? 1 : capacity_ * 2);
@@ -242,7 +225,6 @@ public:
         }
     }
 
-    // insert / erase
     using iterator = T*;
     using const_iterator = const T*;
 
@@ -257,7 +239,6 @@ public:
             reserve(capacity_ == 0 ? 1 : capacity_ * 2);
         }
         
-        // Shift elements to make room
         for (size_t i = size_; i > idx; --i) {
             new(data + i) T(std::move(data[i-1]));
             (data + i - 1)->~T();
@@ -274,10 +255,8 @@ public:
             return end();
         }
         
-        // Destroy the element
         (data + idx)->~T();
         
-        // Shift remaining elements
         for (size_t i = idx; i + 1 < size_; ++i) {
             new(data + i) T(std::move(data[i + 1]));
             (data + i + 1)->~T();
@@ -287,7 +266,6 @@ public:
         return data + idx;
     }
 
-    // emplacement
     template<typename... Args>
     void emplace_back(Args&&... args) {
         if (size_ == capacity_) {
@@ -297,7 +275,6 @@ public:
         ++size_;
     }
 
-    // element access
     T&       operator[](size_t i)       { return data[i]; }
     const T& operator[](size_t i) const { return data[i]; }
 
@@ -321,18 +298,15 @@ public:
         return *this;
     }
 
-    // grant friend access for operator<
     template<typename U>
     friend bool operator< (const Vector<U>& a, const Vector<U>& b);
 };
 
-// free swap for ADL
 template<typename T>
 void swap(Vector<T>& a, Vector<T>& b) noexcept {
     a.swap(b);
 }
 
-// relational operators
 template<typename T>
 bool operator< (const Vector<T>& a, const Vector<T>& b) {
     return std::lexicographical_compare(

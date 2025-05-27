@@ -336,3 +336,272 @@ TEST_CASE("Vector equality and comparison") {
         CHECK_FALSE(v2 < v1);
     }
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+TEST_CASE("Rule of 5 - Default Constructor") {
+    student s;
+    CHECK(s.getVardas() == "");
+    CHECK(s.getPavarde() == "");
+    CHECK(s.getPazymiai().empty());
+    CHECK(s.getEgzaminoRezultatas() == 0.0f);
+    CHECK(s.getGalutinisV() == 0.0f);
+    CHECK(s.getGalutinisM() == 0.0f);
+}
+
+TEST_CASE("Rule of 5 - Copy Constructor") {
+    // Create original student
+    Vector<float> pazymiai{8.5f, 9.0f, 7.5f};
+    student original("Jonas", "Jonaitis", pazymiai, 8.0f);
+    original.skaiciuotiGalutini('v');
+    
+    // Copy constructor
+    student copy(original);
+    
+    CHECK(copy.getVardas() == "Jonas");
+    CHECK(copy.getPavarde() == "Jonaitis");
+    CHECK(copy.getPazymiai().size() == 3);
+    CHECK(copy.getPazymiai()[0] == 8.5f);
+    CHECK(copy.getPazymiai()[1] == 9.0f);
+    CHECK(copy.getPazymiai()[2] == 7.5f);
+    CHECK(copy.getEgzaminoRezultatas() == 8.0f);
+    CHECK(copy.getGalutinisV() == original.getGalutinisV());
+    
+    // Verify independence - modify original
+    original.setVardas("Petras");
+    CHECK(copy.getVardas() == "Jonas"); // Copy should remain unchanged
+}
+
+TEST_CASE("Rule of 5 - Copy Assignment Operator") {
+    Vector<float> pazymiai1{8.5f, 9.0f};
+    Vector<float> pazymiai2{7.0f, 6.5f, 8.0f};
+    
+    student s1("Jonas", "Jonaitis", pazymiai1, 8.0f);
+    student s2("Petras", "Petraitis", pazymiai2, 7.5f);
+    
+    s1.skaiciuotiGalutini('v');
+    float originalGalutinis = s1.getGalutinisV();
+    
+    // Copy assignment
+    s2 = s1;
+    
+    CHECK(s2.getVardas() == "Jonas");
+    CHECK(s2.getPavarde() == "Jonaitis");
+    CHECK(s2.getPazymiai().size() == 2);
+    CHECK(s2.getEgzaminoRezultatas() == 8.0f);
+    CHECK(s2.getGalutinisV() == originalGalutinis);
+    
+    // Test self-assignment
+    s1 = s1;
+    CHECK(s1.getVardas() == "Jonas");
+    CHECK(s1.getPazymiai().size() == 2);
+}
+
+TEST_CASE("Rule of 5 - Move Constructor") {
+    Vector<float> pazymiai{8.5f, 9.0f, 7.5f};
+    student original("Jonas", "Jonaitis", pazymiai, 8.0f);
+    original.skaiciuotiGalutini('v');
+    
+    float expectedGalutinis = original.getGalutinisV();
+    
+    // Move constructor
+    student moved(std::move(original));
+    
+    CHECK(moved.getVardas() == "Jonas");
+    CHECK(moved.getPavarde() == "Jonaitis");
+    CHECK(moved.getPazymiai().size() == 3);
+    CHECK(moved.getEgzaminoRezultatas() == 8.0f);
+    CHECK(moved.getGalutinisV() == expectedGalutinis);
+    
+    // Original should be in valid but unspecified state
+    // We can't check exact values after move, but object should be usable
+    original.setVardas("Test");
+    CHECK(original.getVardas() == "Test");
+}
+
+TEST_CASE("Rule of 5 - Move Assignment Operator") {
+    Vector<float> pazymiai1{8.5f, 9.0f};
+    Vector<float> pazymiai2{7.0f, 6.5f, 8.0f};
+    
+    student s1("Jonas", "Jonaitis", pazymiai1, 8.0f);
+    student s2("Petras", "Petraitis", pazymiai2, 7.5f);
+    
+    s1.skaiciuotiGalutini('m');
+    float expectedGalutinis = s1.getGalutinisM();
+    
+    // Move assignment
+    s2 = std::move(s1);
+    
+    CHECK(s2.getVardas() == "Jonas");
+    CHECK(s2.getPavarde() == "Jonaitis");
+    CHECK(s2.getPazymiai().size() == 2);
+    CHECK(s2.getEgzaminoRezultatas() == 8.0f);
+    CHECK(s2.getGalutinisM() == expectedGalutinis);
+}
+
+TEST_CASE("skaiciuotiVid() - Normal Cases") {
+    student s;
+    
+    SUBCASE("Empty grades") {
+        CHECK(s.skaiciuotiVid() == 0.0f);
+    }
+    
+    SUBCASE("Single grade") {
+        s.addPazymys(8.5f);
+        CHECK(s.skaiciuotiVid() == doctest::Approx(8.5f));
+    }
+    
+    SUBCASE("Multiple grades") {
+        s.addPazymys(8.0f);
+        s.addPazymys(9.0f);
+        s.addPazymys(7.0f);
+        CHECK(s.skaiciuotiVid() == doctest::Approx(8.0f));
+    }
+    
+    SUBCASE("Decimal precision") {
+        s.addPazymys(8.33f);
+        s.addPazymys(9.67f);
+        s.addPazymys(7.5f);
+        float expected = (8.33f + 9.67f + 7.5f) / 3.0f;
+        CHECK(s.skaiciuotiVid() == doctest::Approx(expected));
+    }
+}
+
+TEST_CASE("skaiciuotiMed() - Normal Cases") {
+    student s;
+    
+    SUBCASE("Empty grades") {
+        CHECK(s.skaiciuotiMed() == 0.0f);
+    }
+    
+    SUBCASE("Single grade") {
+        s.addPazymys(8.5f);
+        CHECK(s.skaiciuotiMed() == doctest::Approx(8.5f));
+    }
+    
+    SUBCASE("Odd number of grades") {
+        s.addPazymys(7.0f);
+        s.addPazymys(9.0f);
+        s.addPazymys(8.0f);
+        CHECK(s.skaiciuotiMed() == doctest::Approx(8.0f));
+    }
+    
+    SUBCASE("Even number of grades") {
+        s.addPazymys(7.0f);
+        s.addPazymys(8.0f);
+        s.addPazymys(9.0f);
+        s.addPazymys(10.0f);
+        CHECK(s.skaiciuotiMed() == doctest::Approx(8.5f)); // (8+9)/2
+    }
+    
+    SUBCASE("Unsorted grades") {
+        s.addPazymys(10.0f);
+        s.addPazymys(6.0f);
+        s.addPazymys(8.0f);
+        s.addPazymys(7.0f);
+        s.addPazymys(9.0f);
+        CHECK(s.skaiciuotiMed() == doctest::Approx(8.0f));
+    }
+}
+
+TEST_CASE("skaiciuotiGalutini() - Both Methods") {
+    student s;
+    s.setVardas("Jonas");
+    s.setPavarde("Jonaitis");
+    s.addPazymys(8.0f);
+    s.addPazymys(9.0f);
+    s.addPazymys(7.0f);
+    s.setEgzaminoRezultatas(8.5f);
+    
+    SUBCASE("Average method") {
+        s.skaiciuotiGalutini('v');
+        float vid = 8.0f; // (8+9+7)/3
+        float expected = vid * 0.4f + 8.5f * 0.6f;
+        CHECK(s.getGalutinisV() == doctest::Approx(expected));
+        CHECK(s.getGalutinisM() == 0.0f); // Should remain 0
+    }
+    
+    SUBCASE("Median method") {
+        s.skaiciuotiGalutini('m');
+        float med = 8.0f; // median of [7,8,9]
+        float expected = med * 0.4f + 8.5f * 0.6f;
+        CHECK(s.getGalutinisM() == doctest::Approx(expected));
+        CHECK(s.getGalutinisV() == 0.0f); // Should remain 0
+    }
+}
+
+TEST_CASE("Parametric Constructor") {
+    Vector<float> pazymiai{8.0f, 9.0f, 7.5f};
+    student s("Vardenis", "Pavardenis", pazymiai, 8.5f);
+    
+    CHECK(s.getVardas() == "Vardenis");
+    CHECK(s.getPavarde() == "Pavardenis");
+    CHECK(s.getPazymiai().size() == 3);
+    CHECK(s.getPazymiai()[0] == 8.0f);
+    CHECK(s.getPazymiai()[1] == 9.0f);
+    CHECK(s.getPazymiai()[2] == 7.5f);
+    CHECK(s.getEgzaminoRezultatas() == 8.5f);
+}
+
+TEST_CASE("Setters and Getters") {
+    student s;
+    
+    SUBCASE("Name setters/getters") {
+        s.setVardas("TestVardas");
+        s.setPavarde("TestPavarde");
+        CHECK(s.getVardas() == "TestVardas");
+        CHECK(s.getPavarde() == "TestPavarde");
+    }
+    
+    SUBCASE("Exam result setter/getter") {
+        s.setEgzaminoRezultatas(9.5f);
+        CHECK(s.getEgzaminoRezultatas() == 9.5f);
+    }
+    
+    SUBCASE("Final grades setters/getters") {
+        s.setGalutinisV(8.8f);
+        s.setGalutinisM(8.6f);
+        CHECK(s.getGalutinisV() == 8.8f);
+        CHECK(s.getGalutinisM() == 8.6f);
+    }
+    
+    SUBCASE("Grades vector setter/getter") {
+        Vector<float> pazymiai{7.5f, 8.5f, 9.0f};
+        s.setPazymiai(std::move(pazymiai));
+        CHECK(s.getPazymiai().size() == 3);
+        CHECK(s.getPazymiai()[0] == 7.5f);
+        CHECK(s.getPazymiai()[2] == 9.0f);
+    }
+}
+
+TEST_CASE("addPazymys() Method") {
+    student s;
+    
+    CHECK(s.getPazymiai().empty());
+    
+    s.addPazymys(8.5f);
+    CHECK(s.getPazymiai().size() == 1);
+    CHECK(s.getPazymiai()[0] == 8.5f);
+    
+    s.addPazymys(9.0f);
+    s.addPazymys(7.5f);
+    CHECK(s.getPazymiai().size() == 3);
+    CHECK(s.getPazymiai()[1] == 9.0f);
+    CHECK(s.getPazymiai()[2] == 7.5f);
+}
+
+TEST_CASE("Stream Output Operator") {
+    Vector<float> pazymiai{8.0f, 9.0f, 7.5f};
+    student s("Jonas", "Jonaitis", pazymiai, 8.5f);
+    s.skaiciuotiGalutini('v');
+    
+    std::ostringstream oss;
+    oss << s;
+    std::string output = oss.str();
+    
+    CHECK(output.find("Vardas: Jonas") != std::string::npos);
+    CHECK(output.find("Pavarde: Jonaitis") != std::string::npos);
+    CHECK(output.find("8 9 7.5") != std::string::npos);
+    CHECK(output.find("Egzaminas: 8.5") != std::string::npos);
+    CHECK(output.find("Galutinis(V):") != std::string::npos);
+}

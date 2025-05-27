@@ -14,7 +14,7 @@
 #include <numeric>
 #include <iomanip>
 
-inline float student::skaiciuotiVid() const {
+float student::skaiciuotiVid() const {
     if (pazymiai.empty()) return 0.0f;
     return std::accumulate(pazymiai.begin(), pazymiai.end(), 0.0f)
          / pazymiai.size();

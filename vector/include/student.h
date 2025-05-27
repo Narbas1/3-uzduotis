@@ -75,7 +75,11 @@ class student : public Human{
       pazymiai(std::move(other.pazymiai)),
       egzaminoRezultatas(other.egzaminoRezultatas), 
       galutinisM(other.galutinisM), 
-      galutinisV(other.galutinisV) {}
+      galutinisV(other.galutinisV) {
+            other.setEgzaminoRezultatas(0);
+            other.setGalutinisM(0);
+            other.setGalutinisV(0);
+      }
     //move asg
     student& operator=(student &&other) noexcept {
         if(this != &other){
@@ -85,6 +89,10 @@ class student : public Human{
             egzaminoRezultatas = other.egzaminoRezultatas;
             galutinisM = other.galutinisM;
             galutinisV = other.galutinisV;
+
+            other.setEgzaminoRezultatas(0);
+            other.setGalutinisM(0);
+            other.setGalutinisV(0);
         }
         return *this;
     };
