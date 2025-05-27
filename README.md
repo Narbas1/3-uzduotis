@@ -2,21 +2,17 @@
 Reikia turėti cmake ir c++ compiler.
 Reikia atsidaryti terminala ir paleisti sias komandas.
 
-# 1) Klonuoti repozitorija
-git clone https://github.com/YourUser/my-gradebook.git
-cd my-gradebook
-
-# 2) Sukurti build folderi
-mkdir build && cd build
-
-# 3) Konfiguravimas
-cmake .. -DCMAKE_BUILD_TYPE=Release
-
-# 4) Kompiliavimas
-cmake --build . --config Release
-
-# 5) Instaliavimas (in C:/Program Files/... arba jusu pasirinktas PATH)
-cpack -G NSIS -C Release
+1) Klonuoti repozitorija
+    git clone https://github.com/YourUser/my-gradebook.git
+    cd my-gradebook
+2) Sukurti build folderi
+    mkdir build && cd build
+3) Konfiguravimas
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+4) Kompiliavimas
+    cmake --build . --config Release
+5) Instaliavimas (in C:/Program Files/... arba jusu pasirinktas PATH)
+    cpack -G NSIS -C Release
 
 ---
 
