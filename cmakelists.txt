@@ -1,17 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 project(MyApp VERSION 1.0 LANGUAGES CXX)
 
-# ——————————————————————————————
 # 1) C++ settings
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# ——————————————————————————————
 # 2) Where to find headers
 set(INCLUDE_DIR "${PROJECT_SOURCE_DIR}/vector/include")
 set(DOCTEST_DIR "${PROJECT_SOURCE_DIR}/tests/third_party")
 
-# ——————————————————————————————
 # 3) Build core_lib from your .cpp (excluding main.cpp)
 file(GLOB CORE_SRC
     "${PROJECT_SOURCE_DIR}/vector/source/*.cpp"
@@ -19,13 +16,11 @@ file(GLOB CORE_SRC
 list(REMOVE_ITEM CORE_SRC
     "${PROJECT_SOURCE_DIR}/vector/source/main.cpp"
 )
-
 add_library(core_lib ${CORE_SRC})
 target_include_directories(core_lib
     PUBLIC ${INCLUDE_DIR}
 )
 
-# ——————————————————————————————
 # 4) Build the main executable
 add_executable(vector
     "${PROJECT_SOURCE_DIR}/vector/source/main.cpp"
@@ -34,26 +29,66 @@ target_link_libraries(vector
     PRIVATE core_lib
 )
 
-# ——————————————————————————————
-# 5) Unit tests (doctest)
+# 5) Installation rules (so CPack knows what to package)
+#    If you want headers too, you can install those as well.
+include(GNUInstallDirs)  # optional, gives you CMAKE_INSTALL_BINDIR, etc.
+
+install(TARGETS vector
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}   # “bin” on Windows by default
+)
+
+install(DIRECTORY ${INCLUDE_DIR}/
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}      # e.g. “include”
+    FILES_MATCHING PATTERN "*.h*.hpp"
+)
+
+# 6) Unit tests (doctest)
 option(BUILD_TESTS "Build the doctest unit tests" ON)
 if (BUILD_TESTS)
   enable_testing()
-
   add_executable(tests
     "${PROJECT_SOURCE_DIR}/tests/tests.cpp"
   )
   target_include_directories(tests
     PRIVATE
-      ${INCLUDE_DIR}    # your vector headers
-      ${DOCTEST_DIR}    # where doctest.h lives
+      ${INCLUDE_DIR}
+      ${DOCTEST_DIR}
   )
-  target_link_libraries(tests
-    PRIVATE core_lib
-  )
-
-  add_test(
-    NAME run_doctests
-    COMMAND tests
-  )
+  target_link_libraries(tests PRIVATE core_lib)
+  add_test(NAME run_doctests COMMAND tests)
 endif()
+
+# 7) CPack configuration (always active, not inside BUILD_TESTS)
+include(InstallRequiredSystemLibraries)
+
+set(CPACK_GENERATOR             "NSIS")
+set(CPACK_PACKAGE_NAME          "vector")
+set(CPACK_PACKAGE_VENDOR        "MyCompany")
+set(CPACK_PACKAGE_VERSION       "${PROJECT_VERSION}")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "student grade system.")
+
+# Install into “C:\Program Files\MyApp\…”
+# we don’t want “Program Files\MyApp” – we want this exact folder:
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "")  
+set(CPACK_NSIS_INSTALL_ROOT
+     "C:/Users/Lenovo/Desktop/VU/Karolis-Narbutis"
+)
+
+# Make the installer request elevation
+set(CPACK_NSIS_EXTRA_PREHEAD "RequestExecutionLevel admin")
+
+# Set the name that appears in Add/Remove Programs
+set(CPACK_NSIS_DISPLAY_NAME       "vector ${PROJECT_VERSION}")
+
+# Point to your exe (use the target name, here “vector.exe”)
+set(CPACK_NSIS_EXECUTABLES        "vector.exe" "MyApp")
+install(FILES
+    "${CMAKE_SOURCE_DIR}/vector/source/test1.txt"
+    "${CMAKE_SOURCE_DIR}/vector/source/test2.txt"
+    "${CMAKE_SOURCE_DIR}/vector/source/test3.txt"
+    "${CMAKE_SOURCE_DIR}/vector/source/test4.txt"
+    "${CMAKE_SOURCE_DIR}/vector/source/test5.txt"
+  DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)
+set(CPACK_PACKAGE_DIRECTORY "C:/Users/Lenovo/Desktop/VU/Karolis-Narbutis")
+include(CPack)

@@ -1,12 +1,13 @@
 @echo off
 REM ================================
-REM  build.bat — configurable CMake build + optional test run
+REM  build.bat — configurable CMake build + optional test run + installer
 REM ================================
 
 REM 1) Defaults:
 set BUILD_TYPE=Release
 set BUILD_TESTS=ON
 set RUN_TESTS=OFF
+set MAKE_INSTALLER=OFF
 
 :parse_args
 if "%~1"=="" goto args_done
@@ -21,9 +22,11 @@ if "%~1"=="" goto args_done
     set BUILD_TESTS=ON
   ) else if /I "%~1"=="-runtests" (
     set RUN_TESTS=ON
+  ) else if /I "%~1"=="-installer" (
+    set MAKE_INSTALLER=ON
   ) else (
     echo Unknown option "%~1"
-    echo   Valid flags: -debug, -release, -tests, -notests, -runtests
+    echo   Valid flags: -debug, -release, -tests, -notests, -runtests, -installer
     pause
     exit /B 1
   )
@@ -34,9 +37,10 @@ goto parse_args
 :args_done
 echo ============================================
 echo Configuration:
-echo   Build type : %BUILD_TYPE%
-echo   Build tests: %BUILD_TESTS%
-echo   Run tests  : %RUN_TESTS%
+echo   Build type      : %BUILD_TYPE%
+echo   Build tests     : %BUILD_TESTS%
+echo   Run tests       : %RUN_TESTS%
+echo   Make installer? : %MAKE_INSTALLER%
 echo ============================================
 
 REM 2) Prepare build directory
@@ -73,6 +77,19 @@ if "%RUN_TESTS%"=="ON" (
   )
 )
 
+REM 6) Optionally generate installer
+if "%MAKE_INSTALLER%"=="ON" (
+  echo.
+  echo Generating NSIS installer with CPack...
+  cpack -G NSIS -C %BUILD_TYPE%
+  if ERRORLEVEL 1 (
+    echo Installer generation failed.
+    pause
+    exit /B 1
+  )
+  echo Installer created successfully!
+)
+
 echo.
-echo Build (and test, if requested) succeeded!
+echo All requested steps completed!
 pause
