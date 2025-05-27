@@ -1,0 +1,175 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Human Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Constructor \& Destructor Documentation}{7}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}Human()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{7}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}Human()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{8}{subsubsection.4.1.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}$\sim $Human()}{8}{subsubsection.4.1.1.3}%
+\contentsline {subsection}{\numberline {4.1.2}Member Function Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}getPavarde()}{8}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}getVardas()}{8}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}setPavarde()}{8}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}setVardas()}{8}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}skaiciuotiGalutini()}{8}{subsubsection.4.1.2.5}%
+\contentsline {subsection}{\numberline {4.1.3}Member Data Documentation}{8}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}pavarde}{8}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}vardas}{9}{subsubsection.4.1.3.2}%
+\contentsline {section}{\numberline {4.2}student Class Reference}{9}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Constructor \& Destructor Documentation}{10}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}student()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{10}{subsubsection.4.2.1.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}student()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{10}{subsubsection.4.2.1.2}%
+\contentsline {subsubsection}{\numberline {4.2.1.3}student()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{10}{subsubsection.4.2.1.3}%
+\contentsline {subsubsection}{\numberline {4.2.1.4}student()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{10}{subsubsection.4.2.1.4}%
+\contentsline {subsection}{\numberline {4.2.2}Member Function Documentation}{11}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}addPazymys()}{11}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}getEgzaminoRezultatas()}{11}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}getGalutinisM()}{11}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}getGalutinisV()}{11}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}getPazymiai()}{11}{subsubsection.4.2.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.2.6}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{11}{subsubsection.4.2.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.2.7}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{11}{subsubsection.4.2.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.2.8}setEgzaminoRezultatas()}{11}{subsubsection.4.2.2.8}%
+\contentsline {subsubsection}{\numberline {4.2.2.9}setGalutinisM()}{11}{subsubsection.4.2.2.9}%
+\contentsline {subsubsection}{\numberline {4.2.2.10}setGalutinisV()}{12}{subsubsection.4.2.2.10}%
+\contentsline {subsubsection}{\numberline {4.2.2.11}setPazymiai()}{12}{subsubsection.4.2.2.11}%
+\contentsline {subsubsection}{\numberline {4.2.2.12}skaiciuotiGalutini()}{12}{subsubsection.4.2.2.12}%
+\contentsline {subsubsection}{\numberline {4.2.2.13}skaiciuotiMed()}{12}{subsubsection.4.2.2.13}%
+\contentsline {subsubsection}{\numberline {4.2.2.14}skaiciuotiVid()}{12}{subsubsection.4.2.2.14}%
+\contentsline {subsection}{\numberline {4.2.3}Friends And Related Symbol Documentation}{12}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}operator$<$$<$}{12}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}operator$>$$>$}{12}{subsubsection.4.2.3.2}%
+\contentsline {subsection}{\numberline {4.2.4}Member Data Documentation}{12}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}egzaminoRezultatas}{12}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}galutinisM}{13}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}galutinisV}{13}{subsubsection.4.2.4.3}%
+\contentsline {subsubsection}{\numberline {4.2.4.4}pazymiai}{13}{subsubsection.4.2.4.4}%
+\contentsline {section}{\numberline {4.3}Vector$<$ T $>$ Class Template Reference}{13}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Member Typedef Documentation}{14}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}const\_iterator}{14}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}iterator}{14}{subsubsection.4.3.1.2}%
+\contentsline {subsection}{\numberline {4.3.2}Constructor \& Destructor Documentation}{15}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{15}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{15}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}$\sim $Vector()}{15}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{15}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{15}{subsubsection.4.3.2.5}%
+\contentsline {subsection}{\numberline {4.3.3}Member Function Documentation}{15}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}assign()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}assign()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{15}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}at()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.4}at()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.4.3.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.3.5}back()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.4.3.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.3.6}back()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.4.3.3.6}%
+\contentsline {subsubsection}{\numberline {4.3.3.7}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.4.3.3.7}%
+\contentsline {subsubsection}{\numberline {4.3.3.8}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.4.3.3.8}%
+\contentsline {subsubsection}{\numberline {4.3.3.9}capacity()}{16}{subsubsection.4.3.3.9}%
+\contentsline {subsubsection}{\numberline {4.3.3.10}clear()}{16}{subsubsection.4.3.3.10}%
+\contentsline {subsubsection}{\numberline {4.3.3.11}emplace\_back()}{17}{subsubsection.4.3.3.11}%
+\contentsline {subsubsection}{\numberline {4.3.3.12}empty()}{17}{subsubsection.4.3.3.12}%
+\contentsline {subsubsection}{\numberline {4.3.3.13}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{17}{subsubsection.4.3.3.13}%
+\contentsline {subsubsection}{\numberline {4.3.3.14}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{17}{subsubsection.4.3.3.14}%
+\contentsline {subsubsection}{\numberline {4.3.3.15}erase()}{17}{subsubsection.4.3.3.15}%
+\contentsline {subsubsection}{\numberline {4.3.3.16}front()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{17}{subsubsection.4.3.3.16}%
+\contentsline {subsubsection}{\numberline {4.3.3.17}front()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{17}{subsubsection.4.3.3.17}%
+\contentsline {subsubsection}{\numberline {4.3.3.18}insert()}{17}{subsubsection.4.3.3.18}%
+\contentsline {subsubsection}{\numberline {4.3.3.19}operator"!=()}{18}{subsubsection.4.3.3.19}%
+\contentsline {subsubsection}{\numberline {4.3.3.20}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{18}{subsubsection.4.3.3.20}%
+\contentsline {subsubsection}{\numberline {4.3.3.21}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{18}{subsubsection.4.3.3.21}%
+\contentsline {subsubsection}{\numberline {4.3.3.22}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{18}{subsubsection.4.3.3.22}%
+\contentsline {subsubsection}{\numberline {4.3.3.23}operator==()}{18}{subsubsection.4.3.3.23}%
+\contentsline {subsubsection}{\numberline {4.3.3.24}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.4.3.3.24}%
+\contentsline {subsubsection}{\numberline {4.3.3.25}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.4.3.3.25}%
+\contentsline {subsubsection}{\numberline {4.3.3.26}pop\_back()}{18}{subsubsection.4.3.3.26}%
+\contentsline {subsubsection}{\numberline {4.3.3.27}push\_back()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{19}{subsubsection.4.3.3.27}%
+\contentsline {subsubsection}{\numberline {4.3.3.28}push\_back()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{19}{subsubsection.4.3.3.28}%
+\contentsline {subsubsection}{\numberline {4.3.3.29}reallocate()}{19}{subsubsection.4.3.3.29}%
+\contentsline {subsubsection}{\numberline {4.3.3.30}reserve()}{19}{subsubsection.4.3.3.30}%
+\contentsline {subsubsection}{\numberline {4.3.3.31}resize()}{19}{subsubsection.4.3.3.31}%
+\contentsline {subsubsection}{\numberline {4.3.3.32}shrink\_to\_fit()}{19}{subsubsection.4.3.3.32}%
+\contentsline {subsubsection}{\numberline {4.3.3.33}size()}{19}{subsubsection.4.3.3.33}%
+\contentsline {subsubsection}{\numberline {4.3.3.34}swap()}{19}{subsubsection.4.3.3.34}%
+\contentsline {subsection}{\numberline {4.3.4}Friends And Related Symbol Documentation}{20}{subsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.4.1}operator$<$}{20}{subsubsection.4.3.4.1}%
+\contentsline {subsection}{\numberline {4.3.5}Member Data Documentation}{20}{subsection.4.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.5.1}capacity\_}{20}{subsubsection.4.3.5.1}%
+\contentsline {subsubsection}{\numberline {4.3.5.2}data}{20}{subsubsection.4.3.5.2}%
+\contentsline {subsubsection}{\numberline {4.3.5.3}size\_}{20}{subsubsection.4.3.5.3}%
+\contentsline {chapter}{\numberline {5}File Documentation}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}vector/include/functions.h File Reference}{21}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{22}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{22}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}antras()}{22}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}astuntas()}{22}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}generuotiFaila()}{22}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}ketvirtas()}{22}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}nuskaitytiGeneruotusFailus()}{23}{subsubsection.5.1.2.5}%
+\contentsline {subsubsection}{\numberline {5.1.2.6}penktas()}{23}{subsubsection.5.1.2.6}%
+\contentsline {subsubsection}{\numberline {5.1.2.7}pirmas()}{23}{subsubsection.5.1.2.7}%
+\contentsline {subsubsection}{\numberline {5.1.2.8}rusiuotiOutput()}{23}{subsubsection.5.1.2.8}%
+\contentsline {subsubsection}{\numberline {5.1.2.9}septintas()}{23}{subsubsection.5.1.2.9}%
+\contentsline {subsubsection}{\numberline {5.1.2.10}sestas()}{23}{subsubsection.5.1.2.10}%
+\contentsline {subsubsection}{\numberline {5.1.2.11}skirstytiStudentus()}{24}{subsubsection.5.1.2.11}%
+\contentsline {subsubsection}{\numberline {5.1.2.12}sortedStudentSpausdinimas()}{24}{subsubsection.5.1.2.12}%
+\contentsline {subsubsection}{\numberline {5.1.2.13}spausdinimas()}{24}{subsubsection.5.1.2.13}%
+\contentsline {subsubsection}{\numberline {5.1.2.14}spausdinimasFaile()}{24}{subsubsection.5.1.2.14}%
+\contentsline {subsubsection}{\numberline {5.1.2.15}spausdinimasTerminale()}{24}{subsubsection.5.1.2.15}%
+\contentsline {subsubsection}{\numberline {5.1.2.16}trecias()}{24}{subsubsection.5.1.2.16}%
+\contentsline {section}{\numberline {5.2}functions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{25}{section.5.2}%
+\contentsline {section}{\numberline {5.3}vector/include/student.h File Reference}{25}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{26}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Function Documentation}{26}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}operator$<$$<$()}{26}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}operator$>$$>$()}{26}{subsubsection.5.3.2.2}%
+\contentsline {section}{\numberline {5.4}student.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.5.4}%
+\contentsline {section}{\numberline {5.5}vector/include/utils.h File Reference}{28}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{28}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Function Documentation}{29}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}tikrintiInput()}{29}{subsubsection.5.5.2.1}%
+\contentsline {section}{\numberline {5.6}utils.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{29}{section.5.6}%
+\contentsline {section}{\numberline {5.7}vector/include/vector.h File Reference}{29}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Function Documentation}{30}{subsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.1}operator$<$()}{30}{subsubsection.5.7.1.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.2}operator$<$=()}{30}{subsubsection.5.7.1.2}%
+\contentsline {subsubsection}{\numberline {5.7.1.3}operator$>$()}{30}{subsubsection.5.7.1.3}%
+\contentsline {subsubsection}{\numberline {5.7.1.4}operator$>$=()}{30}{subsubsection.5.7.1.4}%
+\contentsline {subsubsection}{\numberline {5.7.1.5}swap()}{30}{subsubsection.5.7.1.5}%
+\contentsline {section}{\numberline {5.8}vector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{31}{section.5.8}%
+\contentsline {section}{\numberline {5.9}vector/source/functions.cpp File Reference}{34}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{35}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Function Documentation}{36}{subsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.1}antras()}{36}{subsubsection.5.9.2.1}%
+\contentsline {subsubsection}{\numberline {5.9.2.2}astuntas()}{36}{subsubsection.5.9.2.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.3}generuotiFaila()}{36}{subsubsection.5.9.2.3}%
+\contentsline {subsubsection}{\numberline {5.9.2.4}ketvirtas()}{36}{subsubsection.5.9.2.4}%
+\contentsline {subsubsection}{\numberline {5.9.2.5}nuskaitytiGeneruotusFailus()}{36}{subsubsection.5.9.2.5}%
+\contentsline {subsubsection}{\numberline {5.9.2.6}penktas()}{36}{subsubsection.5.9.2.6}%
+\contentsline {subsubsection}{\numberline {5.9.2.7}pirmas()}{36}{subsubsection.5.9.2.7}%
+\contentsline {subsubsection}{\numberline {5.9.2.8}rusiuotiOutput()}{37}{subsubsection.5.9.2.8}%
+\contentsline {subsubsection}{\numberline {5.9.2.9}septintas()}{37}{subsubsection.5.9.2.9}%
+\contentsline {subsubsection}{\numberline {5.9.2.10}sestas()}{37}{subsubsection.5.9.2.10}%
+\contentsline {subsubsection}{\numberline {5.9.2.11}skirstytiStudentus()}{37}{subsubsection.5.9.2.11}%
+\contentsline {subsubsection}{\numberline {5.9.2.12}sortedStudentSpausdinimas()}{37}{subsubsection.5.9.2.12}%
+\contentsline {subsubsection}{\numberline {5.9.2.13}spausdinimas()}{37}{subsubsection.5.9.2.13}%
+\contentsline {subsubsection}{\numberline {5.9.2.14}spausdinimasFaile()}{38}{subsubsection.5.9.2.14}%
+\contentsline {subsubsection}{\numberline {5.9.2.15}spausdinimasTerminale()}{38}{subsubsection.5.9.2.15}%
+\contentsline {subsubsection}{\numberline {5.9.2.16}trecias()}{38}{subsubsection.5.9.2.16}%
+\contentsline {subsection}{\numberline {5.9.3}Variable Documentation}{38}{subsection.5.9.3}%
+\contentsline {subsubsection}{\numberline {5.9.3.1}programosLaikas}{38}{subsubsection.5.9.3.1}%
+\contentsline {section}{\numberline {5.10}vector/source/main.cpp File Reference}{38}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{39}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Function Documentation}{39}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}main()}{39}{subsubsection.5.10.2.1}%
+\contentsline {subsection}{\numberline {5.10.3}Variable Documentation}{39}{subsection.5.10.3}%
+\contentsline {subsubsection}{\numberline {5.10.3.1}programosLaikas}{39}{subsubsection.5.10.3.1}%
+\contentsline {section}{\numberline {5.11}vector/source/student.cpp File Reference}{39}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{40}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Function Documentation}{40}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}operator$<$$<$()}{40}{subsubsection.5.11.2.1}%
+\contentsline {subsubsection}{\numberline {5.11.2.2}operator$>$$>$()}{40}{subsubsection.5.11.2.2}%
+\contentsline {chapter}{Index}{41}{section*.27}%

@@ -1,0 +1,27 @@
+var classstudent =
+[
+    [ "student", "classstudent.html#a811de58380921ebc48bb5f5f7194e06e", null ],
+    [ "student", "classstudent.html#a7991bcf99888776d81f4804fb8e13ee0", null ],
+    [ "student", "classstudent.html#aada9b2351da44180ac7c746dd3f26929", null ],
+    [ "student", "classstudent.html#ad98211ad328f56b204920c4dd951add1", null ],
+    [ "addPazymys", "classstudent.html#a6f9504a84f8420baa36c96cb326b2f0a", null ],
+    [ "getEgzaminoRezultatas", "classstudent.html#abe55926d6d7995245c98c66f3c759490", null ],
+    [ "getGalutinisM", "classstudent.html#a355932a318b8887c0490f460660ba940", null ],
+    [ "getGalutinisV", "classstudent.html#a701e8b108e6a7da4e7ee48f647d98294", null ],
+    [ "getPazymiai", "classstudent.html#a18727e5451d77629ba49ce55d0fb7d00", null ],
+    [ "operator=", "classstudent.html#af5ff4bc1cb475ede2f6f7b4610792e8b", null ],
+    [ "operator=", "classstudent.html#af9b0da62047116bb30273aa0c98d60f6", null ],
+    [ "setEgzaminoRezultatas", "classstudent.html#a2b245180949b699a8d09e3eba162a1f1", null ],
+    [ "setGalutinisM", "classstudent.html#acb1fc9bf71c81ab918cd7b19591fb70a", null ],
+    [ "setGalutinisV", "classstudent.html#a13fe162016f712351e6fa7a0db3bbce0", null ],
+    [ "setPazymiai", "classstudent.html#a18b710aa2c5827f5040f01226df5f4bc", null ],
+    [ "skaiciuotiGalutini", "classstudent.html#a3279c7d7fed1aab56d252be9fba73b87", null ],
+    [ "skaiciuotiMed", "classstudent.html#ab23cac1e81b5ac9be95c56c2072529b9", null ],
+    [ "skaiciuotiVid", "classstudent.html#afd319a1dbefde5a9482f6077d5b578af", null ],
+    [ "operator<<", "classstudent.html#abc319b2d41b72526f02131ae9e758d4a", null ],
+    [ "operator>>", "classstudent.html#a23a08edef34857f5fbea9dfe2d99754f", null ],
+    [ "egzaminoRezultatas", "classstudent.html#afb088a76229a08357bf88bb12efb0540", null ],
+    [ "galutinisM", "classstudent.html#adec6b0217910b80a8066e9eea3c166d2", null ],
+    [ "galutinisV", "classstudent.html#a9c278db79368b574a744e6cc4de4bdc7", null ],
+    [ "pazymiai", "classstudent.html#a4a1810397da27abaa084e03ace7e56ba", null ]
+];

@@ -59,15 +59,13 @@ std::ostream& operator << (std::ostream& os, const student& studentas){
     return os;
 }
 std::istream& operator >> (std::istream& in, student& studentas){
-
     std::string v, pav;
     int p, e;
     float pazymys;
     std::cout << "Pazymiu kiekis: " << "\n";
     in >> p;
     studentas.pazymiai.clear();
-    studentas.pazymiai.reserve(p);
-
+    
     std::cout << "Vardas: ";
     in >> v; 
     studentas.setVardas(v);
