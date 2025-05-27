@@ -1,5 +1,5 @@
 ## Programos paleidimo instrukcija ir reikalavimai:
-Reikia turėti cmake ir c++ compiler.
+Reikia turėti git, cmake, NSIS ir c++ compiler.
 Reikia atsidaryti terminala ir paleisti sias komandas.
 ```
 1) Klonuoti repozitorija:
